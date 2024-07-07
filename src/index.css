@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css2?family=B612&family=B612+Mono:wght@400;700&family=Roboto+Mono:wght@500&family=JetBrains+Mono&family=Nunito&family=Cantarell&Work+Sans:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 240 10% 3.9%;
+
+        --muted: 240 4.8% 95.9%;
+        --muted-foreground: 240 3.8% 46.1%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 240 10% 3.9%;
+
+        --border: 240 5.9% 90%;
+        --input: 240 5.9% 90%;
+
+        --card: 0 0% 100%;
+        --card-foreground: 240 10% 3.9%;
+
+        --primary: 240 5.9% 10%;
+        --primary-foreground: 0 0% 98%;
+
+        --secondary: 240 4.8% 95.9%;
+        --secondary-foreground: 240 5.9% 10%;
+
+        --accent: 240 4.8% 95.9%;
+        --accent-foreground: 240 5.9% 10%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+
+        --info: 204 94% 94%;
+        --info-foreground: 199 89% 48%;
+
+        --success: 149 80% 90%;
+        --success-foreground: 160 84% 39%;
+
+        --warning: 48 96% 89%;
+        --warning-foreground: 25 95% 53%;
+
+        --error: 0 93% 94%;
+        --error-foreground: 0 84% 60%;
+
+        --ring: 240 5.9% 10%;
+
+        --radius: 0.5rem;
+    }
+
+    .dark,
+    [data-kb-theme='dark'] {
+        --background: 240 10% 3.9%;
+        --foreground: 0 0% 98%;
+
+        --muted: 240 3.7% 15.9%;
+        --muted-foreground: 240 5% 64.9%;
+
+        --accent: 240 3.7% 15.9%;
+        --accent-foreground: 0 0% 98%;
+
+        --popover: 240 10% 3.9%;
+        --popover-foreground: 0 0% 98%;
+
+        --border: 240 3.7% 15.9%;
+        --input: 240 3.7% 15.9%;
+
+        --card: 240 10% 3.9%;
+        --card-foreground: 0 0% 98%;
+
+        --primary: 0 0% 98%;
+        --primary-foreground: 240 5.9% 10%;
+
+        --secondary: 240 3.7% 15.9%;
+        --secondary-foreground: 0 0% 98%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+
+        --info: 204 94% 94%;
+        --info-foreground: 199 89% 48%;
+
+        --success: 149 80% 90%;
+        --success-foreground: 160 84% 39%;
+
+        --warning: 48 96% 89%;
+        --warning-foreground: 25 95% 53%;
+
+        --error: 0 93% 94%;
+        --error-foreground: 0 84% 60%;
+
+        --ring: 240 4.9% 83.9%;
+
+        --radius: 0.5rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: 'rlig' 1, 'calt' 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        @apply px-4;
+    }
+}
+
+#root,
+body,
+html {
+    @apply h-full flex flex-col;
+}
+
+.text-glow {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    transition: text-shadow 0.5s ease-in-out;
+}
+
+/* Apply text glow on hover */
+.text-glow:hover {
+    text-shadow: 0 0 20px rgba(12, 93, 199, 0.6);
+    transition: text-shadow 0.5s ease-in-out;
+}
+
+body {
+    margin: 0;
+    font-family: 'Cantarell', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+        'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.mapboxgl-map {
+    z-index: 0 !important;
+}
+
+.tracker-cursor-outer {
+    mix-blend-mode: difference;
+}
+
+.tracker-cursor-inner {
+    mix-blend-mode: difference;
+}
+
+/* html {
+    cursor: none;
+} */
+
+body {
+    background-color: rgb(0, 0, 0); /* consider 20,20,20 et al. */
+    color: #cbd5e0;
+}
+
+code {
+    font-family: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas,
+        'Courier New', monospace;
+}
+
+.blog-markdown {
+    @apply font-b612;
+}
+
+.blog-markdown h1 {
+    @apply text-neutral-100 text-3xl font-plex font-medium mt-6 mb-6;
+}
+
+.blog-markdown h2 {
+    @apply text-neutral-200 text-2xl mt-6 mb-4 font-medium font-plex;
+}
+
+.blog-markdown h3 {
+    @apply text-neutral-200 text-xl mt-6 mb-4 font-medium font-plex;
+}
+
+.blog-markdown p {
+    @apply text-neutral-300 text-base my-3 leading-relaxed;
+}
+
+.blog-markdown code[inline='true'] {
+    @apply text-gray-200 bg-neutral-900 px-1 py-[0.5px] font-jetbrains text-sm border border-dotted border-neutral-500 rounded-md;
+}
+
+.blog-markdown code:not([inline='true']) {
+    @apply rounded-xl shadow-sm m-3 my-5 mx-auto font-jetbrains touch-auto text-sm md:text-base;
+}
+
+.blog-markdown a {
+    @apply text-blue-400 opacity-90 hover:underline;
+}
+
+.blog-markdown ul,
+.blog-markdown ol {
+    @apply pl-5 list-disc text-neutral-300;
+}
+
+.blog-markdown li {
+    @apply text-neutral-300 leading-relaxed;
+}
+
+.blog-markdown blockquote {
+    @apply border-l-[3px] border-neutral-700 p-4 py-2 my-4 italic bg-neutral-900 bg-opacity-80 rounded-r-md drop-shadow-md;
+}
+
+.tag-clicked {
+    @apply bg-orange-500 antialiased text-white border-neutral-400 opacity-100 !important;
+}
+
+.font-nunito {
+    font-family: 'Nunito', sans-serif;
+}
+
+.font-plex {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.font-worksans {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.font-jetbrains {
+    font-family: 'JetBrains Mono';
+}
+
+.font-roboto {
+    font-family: 'Roboto Mono';
+}
+
+.font-b612 {
+    font-family: 'B612', sans-serif;
+}
+
+.font-b612-mono {
+    font-family: 'B612 Mono', monospace;
+}
+
+.font-cantarell {
+    font-family: 'Cantarell', sans-serif;
+}
+
+/* .dark {
+  --bg-primary: #1a202c;
+  --text-primary: #cbd5e0;
+} */
+
+/* .app {
+  --bg-primary: #ffffff;
+  --text-primary: #333333;
+} */
+
+/* body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+} */
+
+:root {
+    --header-height: 200px;
+}
+
+.h-screen-with-header {
+    height: calc(100vh - var(--header-height));
+}
+.max-h-screen-with-header {
+    max-height: calc(100vh - var(--header-height));
+}
+/* For WebKit browsers like Chrome and Safari */
+.scrollbar-hide::-webkit-scrollbar {
+    width: 0em;
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar {
+    height: 7px;
+    width: 5px;
+    background: #00000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(53, 53, 53);
+    -webkit-border-radius: 0.5ex;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #494949;
+}
+
+::-webkit-scrollbar-corner {
+    background: #000;
+}
+
+body {
+    scrollbar-width: thin;
+}
+
+.scrollbar-slim::-moz-scrollbar-thumb {
+    background-color: transparent;
+}
+
+/* For Firefox */
+.scrollbar-hide {
+    scrollbar-width: none;
+}
+
+.scrollbar-hide::-moz-scrollbar-thumb {
+    background-color: transparent;
+}
+
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+}
+
+/*!
+  Theme: Atelier Forest
+  Author: Bram de Haan (http://atelierbramdehaan.nl)
+  License: ~ MIT (or more permissive) [via base16-schemes-source]
+  Maintainer: @highlightjs/core-team
+  Version: 2021.09.0
+*/
+
+/*
+  WARNING: DO NOT EDIT THIS FILE DIRECTLY.
+
+  This theme file was auto-generated from the Base16 scheme atelier-forest
+  by the Highlight.js Base16 template builder.
+
+  - https://github.com/highlightjs/base16-highlightjs
+*/
+
+/*
+base00  #1b1918  Default Background
+base01  #2c2421  Lighter Background (Used for status bars, line number and folding marks)
+base02  #68615e  Selection Background
+base03  #766e6b  Comments, Invisibles, Line Highlighting
+base04  #9c9491  Dark Foreground (Used for status bars)
+base05  #a8a19f  Default Foreground, Caret, Delimiters, Operators
+base06  #e6e2e0  Light Foreground (Not often used)
+base07  #f1efee  Light Background (Not often used)
+base08  #f22c40  Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted
+base09  #df5320  Integers, Boolean, Constants, XML Attributes, Markup Link Url
+base0A  #c38418  Classes, Markup Bold, Search Text Background
+base0B  #7b9726  Strings, Inherited Class, Markup Code, Diff Inserted
+base0C  #3d97b8  Support, Regular Expressions, Escape Characters, Markup Quotes
+base0D  #407ee7  Functions, Methods, Attribute IDs, Headings
+base0E  #6666ea  Keywords, Storage, Selector, Markup Italic, Diff Changed
+base0F  #c33ff3  Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
+*/
+
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+}
+
+code.hljs {
+    padding: 3px 5px;
+}
+
+.hljs {
+    color: #a8a19f;
+    background: #111111;
+}
+
+.hljs::selection,
+.hljs ::selection {
+    background-color: #68615e;
+    color: #a8a19f;
+}
+
+/* purposely do not highlight these things */
+.hljs-formula,
+.hljs-params,
+.hljs-property {
+}
+
+/* base03 - #766e6b -  Comments, Invisibles, Line Highlighting */
+.hljs-comment {
+    color: #766e6b;
+}
+
+/* base04 - #9c9491 -  Dark Foreground (Used for status bars) */
+.hljs-tag {
+    color: #9c9491;
+}
+
+/* base05 - #a8a19f -  Default Foreground, Caret, Delimiters, Operators */
+.hljs-subst,
+.hljs-punctuation,
+.hljs-operator {
+    color: #a8a19f;
+}
+
+.hljs-operator {
+    opacity: 0.7;
+}
+
+/* base08 - Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted */
+.hljs-bullet,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-deletion {
+    color: #f22c40;
+}
+
+/* base09 - Integers, Boolean, Constants, XML Attributes, Markup Link Url */
+.hljs-symbol,
+.hljs-number,
+.hljs-link,
+.hljs-attr,
+.hljs-variable.constant_,
+.hljs-literal {
+    color: #df5320;
+}
+
+/* base0A - Classes, Markup Bold, Search Text Background */
+.hljs-title,
+.hljs-class .hljs-title,
+.hljs-title.class_ {
+    color: #c38418;
+}
+
+.hljs-strong {
+    font-weight: bold;
+    color: #c38418;
+}
+
+/* base0B - Strings, Inherited Class, Markup Code, Diff Inserted */
+.hljs-code,
+.hljs-addition,
+.hljs-title.class_.inherited__,
+.hljs-string {
+    color: #7b9726;
+}
+
+/* base0C - Support, Regular Expressions, Escape Characters, Markup Quotes */
+.hljs-built_in,
+.hljs-doctag, /* guessing */
+.hljs-quote,
+.hljs-keyword.hljs-atrule,
+.hljs-regexp {
+    color: #3d97b8;
+}
+
+/* base0D - Functions, Methods, Attribute IDs, Headings */
+.hljs-function .hljs-title,
+.hljs-attribute,
+.ruby .hljs-property,
+.hljs-title.function_,
+.hljs-section {
+    color: #407ee7;
+}
+
+/* base0E - Keywords, Storage, Selector, Markup Italic, Diff Changed */
+.hljs-type,
+/* .hljs-selector-id, */
+/* .hljs-selector-class, */
+/* .hljs-selector-attr, */
+/* .hljs-selector-pseudo, */
+.hljs-template-tag,
+.diff .hljs-meta,
+.hljs-keyword {
+    color: #6666ea;
+}
+.hljs-emphasis {
+    color: #6666ea;
+    font-style: italic;
+}
+
+/* base0F - Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?> */
+.hljs-meta,
+/*
+  prevent top level .keyword and .string scopes
+  from leaking into meta by accident
+*/
+.hljs-meta .hljs-keyword,
+.hljs-meta .hljs-string {
+    color: #c33ff3;
+}
+
+.hljs-meta .hljs-keyword,
+/* for v10 compatible themes */
+.hljs-meta-keyword {
+    font-weight: bold;
+}

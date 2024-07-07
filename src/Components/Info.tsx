@@ -1,0 +1,5 @@
+interface InfoProps {}
+
+let Info = () => {
+
+}

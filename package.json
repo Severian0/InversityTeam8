@@ -1,0 +1,53 @@
+{
+  "name": "vite-template-solid",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@farmfe/cli": "^1.0.2",
+    "@farmfe/core": "^1.2.0",
+    "@farmfe/js-plugin-postcss": "^1.7.0",
+    "autoprefixer": "^10.4.19",
+    "lightningcss": "^1.24.1",
+    "postcss": "^8.4.38",
+    "solid-devtools": "^0.29.3",
+    "typescript": "^5.4.3",
+    "vite": "^5.3.3",
+    "vite-plugin-solid": "^2.10.2"
+  },
+  "dependencies": {
+    "@babylonjs/core": "^6.49.0",
+    "@cortex-js/compute-engine": "^0.24.1",
+    "@kobalte/core": "^0.13.1",
+    "@solidjs/router": "^0.13.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "dockview-core": "^1.11.0",
+    "front-matter": "^4.0.2",
+    "highlight.js": "^11.9.0",
+    "katex": "^0.16.10",
+    "mapbox-gl": "^3.5.1",
+    "mathlive": "^0.98.6",
+    "rehype-katex": "^7.0.0",
+    "remark-math": "^6.0.0",
+    "solid-dockview": "^1.0.1",
+    "solid-icons": "^1.1.0",
+    "solid-js": "^1.8.16",
+    "solid-map-gl": "^1.11.3",
+    "solid-markdown": "^2.0.1",
+    "solid-tiptap": "^0.7.0",
+    "solid-transition-group": "^0.2.3",
+    "solid-typer": "^0.0.3",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7",
+    "three": "^0.157.0",
+    "timeago.js": "^4.0.2"
+  }
+}

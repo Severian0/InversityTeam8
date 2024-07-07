@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+math-field {
+  --caret-color: theme(colors.neutral.200);
+  --selection-color: theme(colors.white);
+  --selection-background-color: theme(colors.neutral.800);
+  --contains-highlight-background-color: theme(colors.neutral.900);
+
+  width: 100%;
+  max-width: 100%;
+
+  @apply border border-b-4 rounded-lg items-center p-3 pl-4  duration-300 ease-in-out transition-all cursor-text border-white outline-none mx-auto;
+  @apply text-3xl bg-black text-white;
+}
+
+math-field::part(virtual-keyboard-toggle) {
+  @apply bg-black text-white transition-all ease-in-out duration-300;
+}
+
+math-field::part(virtual-keyboard-toggle):hover {
+  @apply bg-neutral-800;
+}
+
+math-field::part(virtual-keyboard-toggle):active {
+  @apply bg-neutral-700;
+}
+
+math-field::part(menu-toggle) {
+  @apply bg-black text-white transition-all ease-in-out duration-300;
+}
+
+math-field::part(menu-toggle):hover {
+  @apply bg-neutral-800;
+}
+
+math-field::part(menu-toggle):active {
+  @apply bg-neutral-700;
+}

@@ -1,0 +1,8 @@
+{
+  "tsx": true,
+  "componentDir": "./src/Components/Tools",
+  "tailwind": {
+    "config": "tailwind.config.mjs",
+    "css": "src/index.css"
+  }
+}
